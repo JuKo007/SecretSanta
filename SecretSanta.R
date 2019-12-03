@@ -53,13 +53,13 @@ if ("mailR" %in% installed.packages() == FALSE) {
 library(mailR)
 
 
-# Email Credentials: You need to allow Google the login with 3rd party apps
+# Email Credentials: You need to set permissions in Google to login with 3rd party apps
 #   -> https://myaccount.google.com/u/1/lesssecureapps?pageId=none
 
-# Enter the gmail address that you want to send the secret Santa invitations from
+# Enter the gmail address that you want to send the secret santa invitations from
 sender <- "YourEmail@gmail.com"
 
-# Enter your Gmail password (DO NOT EVER SHARE THIS)
+# Enter your Gmail password (DO NOT EVER SHARE THIS WITH ANYONE)
 pwd <- "YOUR PASSWORD"
 
 
@@ -71,7 +71,7 @@ for (i in 1:dim(SantaDF)[2]){
   send.mail(from = sender,
             to = recipients,
             subject = "Secret Santa",
-            body = paste("HoHoHo, you are getting a gift for:",SantaDF[i,2]),
+            body = paste("HoHoHo, you should get something nice for :",SantaDF[i,2]),
             smtp = list(host.name = "smtp.gmail.com", port = 465,
                         user.name = sender,
                         passwd = pwd, ssl = TRUE),
