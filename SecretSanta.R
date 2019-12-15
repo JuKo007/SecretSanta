@@ -64,7 +64,7 @@ pwd <- "YOUR PASSWORD"
 
 
 # Sending Emails
-for (i in 1:dim(SantaDF)[2]){
+for (i in 1:dim(SantaDF)[1]){
 
   recipients <- as.character(SantaDF[i,1])
 
